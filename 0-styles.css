@@ -360,6 +360,10 @@ template {
     --font-family-title: 'Source Sans Pro', sans-serif;
     --font-family-base:  'Source Sans Pro', sans-serif;
     --line-height: 26px;
+    --font-size-text: 16px;
+    --font-size-title: 32px;
+
+    --button-opacity: .9;
 }
 
 /* HEADER */
@@ -419,12 +423,12 @@ template {
 }
 .text-container .h1-h3 h1 {
     margin: 0;
-    font-size: 32px;
+    font-size: var(--font-size-title);
     line-height: 40px;
 }
 .text-container .h1-h3 h3 {
     margin: 0 0 40px 0;
-    font-size: 16px;
+    font-size: var(--font-size-text);
     line-height: 20px;
 }
 .text-container .btn {
@@ -443,7 +447,7 @@ template {
 }
 .text-container .btn:hover {
     cursor: pointer;
-    opacity: .8;
+    opacity: var(--button-opacity);
 }
 .text-container .long-text {
     justify-content: center;
