@@ -363,45 +363,75 @@ template {
 }
 
 /* HEADER */
+
 .header {
     background: url('./images/headphones_hero_1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 100vw;
+    height: 100vh;
+    position: relative;
 }
 .logo-img {
     width: 161px;
     height: 32px;
-    margin: 20px 200px;
 }
-.navbar-menu {
+.navigation {
+    display: flex;
+    max-width: 1000px;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation .navbar-menu {
     display: flex;
 }
-.navigation .nav-list {
+.nav-list {
+    display: flex;
     list-style: none;
-    display: inline-flex;
-    text-align: right;
     color: var(--color-white);
+    /* margin: 30px; */
+}
+.navigation .nav-list li {
+    display: flex;
+    font-size: 12px;
+    font-family: var(--font-family-title);
+    font-weight: normal;
+    line-height: 15px;
+    margin-left: 55px;
+}
+.navigation .nav-list li:hover {
+    color: var(--color-red);
+    cursor: pointer;
 }
 .text-container {
     margin: 0;
     padding: 0;
     text-align: center;
+    position: absolute;
+    bottom: -2%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .text-container .h1-h3 {
-    margin: 19rem;
     color: var(--color-white);
     font-family: var(--font-family-base);
 }
 .text-container .h1-h3 h1 {
+    margin: 0;
     font-size: 32px;
     line-height: 40px;
 }
 .text-container .h1-h3 h3 {
-    margin: -20px;
+    margin: 0 0 40px 0;
     font-size: 16px;
     line-height: 20px;
 }
 .text-container .btn {
     width: 162px;
     height: 44px;
+    border: none;
+    outline: none;
     border-radius: 20px;
     background-color: var(--color-red);
     color: var(--color-white);
@@ -409,10 +439,7 @@ template {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    top: -15rem;
-    position: relative;
-    box-shadow: 0px, 2px rgba(0, 0, 0, 0.5);
-    offset: 0px 2px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 .text-container .btn:hover {
     cursor: pointer;
@@ -421,8 +448,8 @@ template {
 .text-container .long-text {
     justify-content: center;
     display: flex;
-    top: -12.5rem;
     position: relative;
+    margin-top: 70px;
 }
 .text-container .long-text p {
     font-family: var(--font-family-base);
@@ -433,4 +460,97 @@ template {
     height: 104px;
     text-align: center;
     line-height: var(--line-height);
+}
+#menu_checkbox {
+    display: none;
+}
+#menu_checkbox:checked ~ .navbar-menu {
+  display: flex;
+}
+@media screen and (max-width: 480px) {
+  .navigation .navbar-menu {
+    display: none;
+  }
+  .header {
+    width: 100%;
+    height: auto;
+  }
+  .logo-img {
+    margin: 10px;
+  }
+  .text-container {
+    max-width: 357px;
+    position: unset;
+    transform: unset;
+    margin: 10rem auto;
+  }
+  .text-container .h1-h3 h3 {
+    max-width: 300px;
+    margin: 0 55px;
+  }
+  .text-container .btn {
+    margin: 15px;
+  }
+  .text-container .long-text {
+    margin: 20px;
+  }
+  .navigation {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .navigation .nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+  .navigation .nav-list li {
+    font-size: 16px;
+    justify-content: center;
+    margin: 0;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .navigation .nav-list li + li {
+    margin-top: 40px;
+  }
+  label {
+    left: 0;
+    position: absolute;
+    top: 2%;
+  }
+  label div {
+    width: 2px;
+    height: 2px;
+    margin-left: 20px;
+    border: none;
+    background-color: var(--color-white);
+    margin-bottom: 4px;
+    margin-left: 20px;
+  }
+  label div:first-child {
+    margin-top: 5px;
+    width: 18px;
+  }
+  label div:nth-child(2) {
+    width: 12px;
+  }
+  label div:last-child {
+    width: 18px;
+    margin-bottom: 0;
+  }
+  #menu_checkbox:checked + label div:nth-child(2) {
+    background: transparent;
+  }
+  #menu_checkbox:checked + label div:first-child {
+    transform-origin: 3px 3px;
+    transform: rotate(45deg);
+  }
+  #menu_checkbox:checked + label div:last-child {
+    transform-origin: 0 -2px;
+    transform: rotate(-45deg);
+  }
+  .text-container .long-text p {
+    height: auto;
+  }
 }
