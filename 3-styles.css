@@ -366,6 +366,8 @@ template {
     --font-weight-bold: 700;
 
     --button-opacity: .9;
+
+    --footer-background: #071629;
 }
 
 /* HEADER */
@@ -804,6 +806,43 @@ template {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+.contact-us-div h1 {
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-semi-bold);
+}
+.contact-us-div input::placeholder {
+  font-family: var(--font-family-base);
+  color: black;
+  font-size: var(--font-size-text);
+  font-weight: var(--font-weight-semi-bold);
+}
+.contact-us-div input {
+  border: 0.5px solid grey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: 40px;
+  margin-top: 50px;
+}
+.contact-us-div textarea::placeholder {
+  font-family: var(--font-family-base);
+  color: black;
+  font-size: var(--font-size-text);
+  font-weight: var(--font-weight-semi-bold);
+}
+.contact-us-div textarea {
+  height: 40px;
+  border: 0.5px solid grey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 50px;
+}
+.contact-us-div .form-control {
+  list-style: none;
 }
 .contact-us-div .btn {
   width: 162px;
@@ -817,4 +856,22 @@ template {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
+  margin-bottom: 5rem;
+}
+.contact-us-div .btn:hover {
+  cursor: pointer;
+  opacity: var(--button-opacity);
+}
+.contact-us-div .container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .contact-us-div form {
+    width: 335px;
+  }
+  .contact-us-div textarea {
+    width: 335px;
+  }
 }
